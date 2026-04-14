@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Scholarly Spectrum | Elias Thorne</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#bcc2ff",
+                        "surface-container-high": "#d5ecf8",
+                        "tertiary-fixed-dim": "#ffba38",
+                        "tertiary": "#3b2600",
+                        "on-primary-container": "#9aa5ff",
+                        "on-surface": "#071e27",
+                        "primary-container": "#283593",
+                        "tertiary-container": "#573b00",
+                        "on-tertiary-fixed-variant": "#604100",
+                        "surface": "#f3faff",
+                        "surface-container-highest": "#cfe6f2",
+                        "on-secondary-fixed-variant": "#004f4f",
+                        "surface-container-low": "#e6f6ff",
+                        "on-primary-fixed": "#000c62",
+                        "on-background": "#071e27",
+                        "on-secondary-container": "#006e6e",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#f3faff",
+                        "on-tertiary-fixed": "#281900",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#90efef",
+                        "on-tertiary-container": "#e39f00",
+                        "primary-fixed": "#dfe0ff",
+                        "on-primary-fixed-variant": "#303c9a",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#454652",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#93f2f2",
+                        "inverse-surface": "#1e333c",
+                        "secondary": "#006a6a",
+                        "outline": "#767683",
+                        "on-secondary-fixed": "#002020",
+                        "on-primary": "#ffffff",
+                        "background": "#f3faff",
+                        "surface-container": "#dbf1fe",
+                        "surface-tint": "#4955b3",
+                        "surface-dim": "#c7dde9",
+                        "inverse-on-surface": "#dff4ff",
+                        "secondary-fixed-dim": "#76d6d5",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#ffdeac",
+                        "outline-variant": "#c6c5d4",
+                        "primary": "#0b1a7d",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#bcc2ff",
+                        "surface-variant": "#cfe6f2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Newsreader"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #f3faff; color: #071e27; }
+        .font-newsreader { font-family: 'Newsreader', serif; }
+        .glass-nav { background: rgba(243, 250, 255, 0.8); backdrop-filter: blur(12px); }
+        .signature-gradient { background: linear-gradient(135deg, #0b1a7d 0%, #283593 100%); }
+        .text-on-gradient { color: #ffffff; }
+        .provenance-glow { position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(188,194,255,0.1) 0%, transparent 70%); pointer-events: none; transition: all 0.5s ease; }
+        .provenance-card:hover .provenance-glow { transform: translate(10%, 10%); opacity: 0.5; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 glass-nav transition-colors duration-300">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<span class="text-2xl font-bold font-newsreader text-primary tracking-tight">The Scholarly Spectrum</span>
+<div class="hidden md:flex space-x-8 items-center">
+<a class="text-primary border-b-2 border-primary pb-1 font-bold font-label text-sm tracking-wide" href="#">Academic</a>
+<a class="text-slate-600 font-medium hover:text-primary transition-colors duration-300 font-label text-sm tracking-wide" href="#">Research</a>
+<a class="text-slate-600 font-medium hover:text-primary transition-colors duration-300 font-label text-sm tracking-wide" href="#">Projects</a>
+<a class="text-slate-600 font-medium hover:text-primary transition-colors duration-300 font-label text-sm tracking-wide" href="#">Achievements</a>
+<a class="text-slate-600 font-medium hover:text-primary transition-colors duration-300 font-label text-sm tracking-wide" href="#">Contact</a>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-xl font-bold transition-transform active:scale-95 duration-150">Download CV</button>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative pt-32 pb-20 px-8 overflow-hidden">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 z-10">
+<h1 class="text-6xl md:text-8xl font-newsreader font-bold text-primary leading-none tracking-tight mb-6">
+                    Synthesizing <br/>Human Intelligence.
+                </h1>
+<p class="text-xl md:text-2xl text-on-surface-variant font-body max-w-2xl mb-10 leading-relaxed">
+                    Elias Thorne is a computational linguist and aesthetic theorist exploring the intersection of neural architecture and the semiotics of artificial thought.
+                </p>
+<div class="flex flex-wrap gap-4 items-center mb-12">
+<button class="bg-surface-container-high/60 backdrop-blur-md text-primary px-8 py-4 rounded-xl font-bold text-lg hover:bg-surface-container-high transition-all">
+                        About My Work
+                    </button>
+</div>
+<div class="flex items-center space-x-6 text-secondary">
+<a class="hover:text-primary-container transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-sm">link</span> LinkedIn
+                    </a>
+<a class="hover:text-primary-container transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-sm">mail</span> Email
+                    </a>
+<a class="hover:text-primary-container transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-sm">share</span> Facebook
+                    </a>
+<a class="hover:text-primary-container transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-sm">public</span> Instagram
+                    </a>
+</div>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="relative rounded-2xl overflow-hidden aspect-[4/5] shadow-2xl shadow-primary/5">
+<img alt="Professional portrait" class="w-full h-full object-cover" data-alt="Modern professional portrait of a man in scholarly attire with thoughtful expression in a contemporary library setting with soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-qGvyvrsNxxxHd-MGHRAyjcqLGWh5vYLHZ3OetAzNBUdwd-oubakOIbcEcB_ssGOSzLVfc63EOzLxymP4CS7OCnzA3CmvXZFmxa2-yxmp9YgyRtbgerYykPmJs4ZtoyMfMwnQ4LP07T0i9a5Zjc0IsPsqNdEBZn1mBzYaG4txKfKegSRjwdFEylqzP4fay3nUYuBcJEd1FmTQU2y-HiCsnuaa7E-Blispt2T68_7lkagdlsvIYyLB9l2XAcRism_0Ym5JlSoY-1Fg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+</div>
+<!-- Overlapping element -->
+<div class="absolute -bottom-6 -left-6 bg-tertiary-fixed text-on-tertiary-fixed p-6 rounded-xl shadow-lg max-w-[200px]">
+<p class="font-newsreader italic text-lg leading-tight">"Where code meets the sublime."</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Academic Provenance -->
+<section class="bg-surface-container-low py-24 px-8 overflow-hidden">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<h2 class="text-4xl md:text-5xl font-newsreader font-bold text-primary max-w-md">Academic Provenance</h2>
+<div class="h-px flex-grow bg-primary/10 mx-8 hidden md:block"></div>
+<span class="text-secondary font-bold tracking-widest uppercase text-sm">Curriculum Vitae</span>
+</div>
+<div class="flex justify-center">
+<div class="provenance-card group relative p-12 rounded-[2rem] bg-surface-container-lowest border border-primary/5 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 w-full max-w-3xl overflow-hidden">
+<div class="provenance-glow opacity-0 group-hover:opacity-100"></div>
+<div class="relative z-10 flex flex-col md:flex-row gap-8 items-start">
+<div class="flex-shrink-0 bg-primary/5 p-6 rounded-2xl group-hover:bg-primary transition-colors duration-500">
+<span class="material-symbols-outlined text-5xl text-primary group-hover:text-white transition-colors duration-500" style="font-variation-settings: 'FILL' 1">school</span>
+</div>
+<div class="flex-grow">
+<div class="flex items-center gap-3 mb-2">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Most Recent</span>
+<span class="text-slate-400 font-bold font-newsreader text-xl">2019</span>
+</div>
+<span class="text-primary font-bold font-newsreader text-5xl block mb-4 group-hover:translate-x-1 transition-transform duration-500">Ph.D.</span>
+<h3 class="text-2xl font-bold text-on-surface mb-2">Computational Linguistics</h3>
+<p class="text-on-surface-variant font-medium text-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">account_balance</span> University of Oxford
+                            </p>
+<div class="mt-10 pt-8 border-t border-indigo-50 relative">
+<span class="absolute -top-3 left-0 bg-surface-container-lowest px-4 text-xs font-bold uppercase tracking-widest text-slate-400">Research Focus</span>
+<p class="text-lg italic text-slate-600 font-newsreader leading-relaxed">
+                                    "Neural Semantics in Hyper-dimensional Latent Spaces: A Study on Cross-Domain Semantic Drift in Synthetic Architectures."
+                                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Primary Research Clusters -->
+<section class="py-24 px-8">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-20">
+<h2 class="text-4xl md:text-6xl font-newsreader font-bold text-primary mb-6">Primary Research Clusters</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto text-lg">Investigating the structural and poetic foundations of information across biological and synthetic domains.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="group p-8 rounded-2xl bg-surface transition-all hover:bg-white hover:shadow-2xl hover:shadow-primary/5 border border-transparent hover:border-primary/5">
+<span class="material-symbols-outlined text-4xl text-secondary mb-6" data-icon="neurology">neurology</span>
+<h3 class="text-xl font-bold text-primary mb-4">Neural Linguistics</h3>
+<p class="text-slate-600 text-sm leading-relaxed">Mapping the synchronic evolution of syntax within large-scale neural network architectures.</p>
+</div>
+<div class="group p-8 rounded-2xl bg-surface transition-all hover:bg-white hover:shadow-2xl hover:shadow-primary/5 border border-transparent hover:border-primary/5">
+<span class="material-symbols-outlined text-4xl text-secondary mb-6" data-icon="analytics">analytics</span>
+<h3 class="text-xl font-bold text-primary mb-4">Information Entropy</h3>
+<p class="text-slate-600 text-sm leading-relaxed">Quantifying the noise-to-signal ratio in cross-disciplinary academic discourse and digital archives.</p>
+</div>
+<div class="group p-8 rounded-2xl bg-surface transition-all hover:bg-white hover:shadow-2xl hover:shadow-primary/5 border border-transparent hover:border-primary/5">
+<span class="material-symbols-outlined text-4xl text-secondary mb-6" data-icon="terminal">terminal</span>
+<h3 class="text-xl font-bold text-primary mb-4">Aesthetics of Code</h3>
+<p class="text-slate-600 text-sm leading-relaxed">Philosophical inquiry into the minimalist beauty and structural elegance of functional programming.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Selected Monographs & Projects -->
+<section class="bg-surface-container py-24 px-8">
+<div class="max-w-7xl mx-auto">
+<div class="flex items-center justify-between mb-16">
+<h2 class="text-4xl md:text-5xl font-newsreader font-bold text-primary">Selected Monographs</h2>
+<a class="text-secondary font-bold flex items-center gap-2 group" href="#">
+                    Full Archive <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<div class="space-y-12">
+<div class="flex flex-col md:flex-row bg-surface-container-lowest rounded-3xl overflow-hidden shadow-sm">
+<div class="md:w-[40%] h-80 md:h-auto overflow-hidden">
+<img alt="Lexicon Engine Project" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" data-alt="Abstract visualization of flowing golden typography particles merging into a complex neural network structure against a deep indigo background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBna7DnsUdkaBEnVDEiQ3t1jnKikL1zoWyKmo7tM4a_9aShXImgkGAn7vsXpekiSp4iR_T0aKgbLKj3f5GYdjMkokdUNLJFQLCvPUkAynSbkYfx6Kd1GGflyMvy49kWVV_v3TAw-24dGXt8PpHrXe12cEUEc59pCu7oCVAonJJzq2-h5oyLa14pYynZPhFZ-NWdXs9QyUw-wxfKEQo0sUoqLA0ENrZDQzAwUtNuu_Ry8sDsucrPuLV4JGnZI8OJcZMBrctfKWNibqg2"/>
+</div>
+<div class="md:w-[60%] p-12 flex flex-col justify-center">
+<div class="flex gap-2 mb-4">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Publication</span>
+<span class="bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">AI Ethics</span>
+</div>
+<h3 class="text-3xl font-newsreader font-bold text-primary mb-4">The Lexicon Engine</h3>
+<p class="text-on-surface-variant text-lg mb-8 leading-relaxed">
+                            A comprehensive study on the predictive mechanics of language models and their potential to redefine human creativity. Published by MIT Press.
+                        </p>
+<button class="text-primary font-bold border-b border-primary self-start hover:text-secondary hover:border-secondary transition-colors">Read Abstract</button>
+</div>
+</div>
+<div class="flex flex-col md:flex-row-reverse bg-surface-container-lowest rounded-3xl overflow-hidden shadow-sm">
+<div class="md:w-[40%] h-80 md:h-auto overflow-hidden">
+<img alt="Architectures of Silence Project" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" data-alt="Minimalist architectural photography of a stark white concrete corridor with dramatic shadows and a single beam of light hitting a textured wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEScV8uBxfdKSlfmA_14MhaES0OEEXFQO7_17u_PSL9cW77WqZCCndJ58bBfDMz1O-Sw0qeEW9WzY3CwW8JSz1JeBlpMrbM4Srh0MC6XJmZRiGsggISRjn9-4Di6E4BtqFS6GJEJclLG6t0a344i-lZS4SQ0Lkf8zzxiS16zyVW4C9dOtNGvhF1hfAZDDSF-rEk26vAISOdjyTi0iTQeWCqkNT56GLiitWGXd1hnqExlONA2S5w9pbCKx--I50mUn9JI6YHiViQ7nQ"/>
+</div>
+<div class="md:w-[60%] p-12 flex flex-col justify-center">
+<div class="flex gap-2 mb-4">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Exhibition</span>
+<span class="bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Visual Arts</span>
+</div>
+<h3 class="text-3xl font-newsreader font-bold text-primary mb-4">Architectures of Silence</h3>
+<p class="text-on-surface-variant text-lg mb-8 leading-relaxed">
+                            An installation exploring the philosophical concept of "void" in digital spaces, utilizing spatial audio and reactive light mapping.
+                        </p>
+<button class="text-primary font-bold border-b border-primary self-start hover:text-secondary hover:border-secondary transition-colors">View Gallery</button>
+</div>
+</div>
+<div class="flex flex-col md:flex-row bg-surface-container-lowest rounded-3xl overflow-hidden shadow-sm">
+<div class="md:w-[40%] h-80 md:h-auto overflow-hidden">
+<img alt="Neural Semiotics" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" data-alt="Macro photography of glowing fiber optic cables weaving together like a neural synapse in cool blue and violet tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3p8X8mYI76L3wR2L7v9S2k7M7K3J3N4R5L6M7N8O9P0Q1R2S3T4U5V6W7X8Y9Z0A1B2C3D4E5F6G7H8I9J0K1L2M3N4O5P6Q7R8S9T0"/>
+</div>
+<div class="md:w-[60%] p-12 flex flex-col justify-center">
+<div class="flex gap-2 mb-4">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Research</span>
+<span class="bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Linguistics</span>
+</div>
+<h3 class="text-3xl font-newsreader font-bold text-primary mb-4">Neural Semiotics</h3>
+<p class="text-on-surface-variant text-lg mb-8 leading-relaxed">
+                            Investigating the emergence of meaning within artificial neural layers and the parallel evolution of human symbolic thought.
+                        </p>
+<button class="text-primary font-bold border-b border-primary self-start hover:text-secondary hover:border-secondary transition-colors">Learn More</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Recognition (Vertical Timeline) -->
+<section class="py-24 px-8 overflow-hidden">
+<div class="max-w-4xl mx-auto">
+<h2 class="text-4xl md:text-5xl font-newsreader font-bold text-primary text-center mb-20">Recognition</h2>
+<div class="relative">
+<!-- Vertical Line -->
+<div class="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-indigo-100/50"></div>
+<div class="space-y-24">
+<div class="relative flex items-center justify-between w-full">
+<div class="w-5/12 text-right pr-8">
+<span class="text-tertiary font-bold font-newsreader text-2xl">2023</span>
+<h3 class="text-xl font-bold text-primary mt-1">Turing Research Grant</h3>
+<p class="text-sm text-slate-500 mt-2">Awarded for pioneering work in Neuromorphic Computing interfaces.</p>
+</div>
+<div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full signature-gradient border-4 border-surface ring-8 ring-indigo-50"></div>
+<div class="w-5/12"></div>
+</div>
+<div class="relative flex items-center justify-between w-full">
+<div class="w-5/12"></div>
+<div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full signature-gradient border-4 border-surface ring-8 ring-indigo-50"></div>
+<div class="w-5/12 pl-8">
+<span class="text-tertiary font-bold font-newsreader text-2xl">2021</span>
+<h3 class="text-xl font-bold text-primary mt-1">30 Under 30</h3>
+<p class="text-sm text-slate-500 mt-2">Named by Forbes as a leading visionary in Science and Education technology.</p>
+</div>
+</div>
+<div class="relative flex items-center justify-between w-full">
+<div class="w-5/12 text-right pr-8">
+<span class="text-tertiary font-bold font-newsreader text-2xl">2019</span>
+<h3 class="text-xl font-bold text-primary mt-1">Best Paper Award</h3>
+<p class="text-sm text-slate-500 mt-2">International Conference on Learning Representations (ICLR) for seminal research on latent semantics.</p>
+</div>
+<div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full signature-gradient border-4 border-surface ring-8 ring-indigo-50"></div>
+<div class="w-5/12"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-24 px-8 bg-surface-container-high/30">
+<div class="max-w-7xl mx-auto bg-surface-container-lowest rounded-[2.5rem] shadow-2xl shadow-primary/5 overflow-hidden flex flex-col lg:flex-row">
+<div class="lg:w-1/2 p-12 lg:p-20 signature-gradient text-on-primary">
+<h2 class="text-4xl md:text-5xl font-newsreader font-bold mb-8">Let's start a dialogue</h2>
+<p class="text-indigo-100/80 text-lg mb-12 leading-relaxed">
+                    Whether it's for a lecture, a collaborative research project, or a philosophical inquiry, I welcome all intellectual intersections.
+                </p>
+<div class="space-y-8">
+<div class="flex items-start gap-4">
+<div class="bg-white/10 p-3 rounded-xl">
+<span class="material-symbols-outlined text-white">location_on</span>
+</div>
+<div>
+<p class="font-bold">Faculty Office</p>
+<p class="text-indigo-100/70">Wellington Square, Oxford OX1 2JD, UK</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="bg-white/10 p-3 rounded-xl">
+<span class="material-symbols-outlined text-white">alternate_email</span>
+</div>
+<div>
+<p class="font-bold">Correspondence</p>
+<p class="text-indigo-100/70">e.thorne@oxford.ac.uk</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:w-1/2 p-12 lg:p-20">
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-slate-400">Full Name</label>
+<input class="w-full bg-surface-container-low border-b-2 border-primary/10 focus:border-primary border-t-0 border-x-0 focus:ring-0 px-0 py-3 transition-all" placeholder="John Doe" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-slate-400">Email Address</label>
+<input class="w-full bg-surface-container-low border-b-2 border-primary/10 focus:border-primary border-t-0 border-x-0 focus:ring-0 px-0 py-3 transition-all" placeholder="john@university.edu" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-slate-400">Inquiry Type</label>
+<select class="w-full bg-surface-container-low border-b-2 border-primary/10 focus:border-primary border-t-0 border-x-0 focus:ring-0 px-0 py-3 transition-all">
+<option>Academic Collaboration</option>
+<option>Speaking Engagement</option>
+<option>Project Consultation</option>
+<option>General Inquiry</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-slate-400">Message</label>
+<textarea class="w-full bg-surface-container-low border-b-2 border-primary/10 focus:border-primary border-t-0 border-x-0 focus:ring-0 px-0 py-3 transition-all" placeholder="How can we advance the conversation?" rows="4"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-xl font-bold text-lg hover:brightness-110 transition-all flex justify-center items-center gap-2" type="submit">
+                        Send Transmission <span class="material-symbols-outlined text-sm">send</span>
+</button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 mt-24 bg-surface dark:bg-slate-950">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 border-t border-indigo-100/20 max-w-7xl mx-auto pt-12">
+<div class="mb-6 md:mb-0">
+<span class="font-newsreader italic text-secondary text-xl">The Scholarly Spectrum</span>
+<p class="font-body text-sm tracking-wide text-slate-500 mt-2">© 2024 The Scholarly Spectrum. Curated with Intellectual Energy.</p>
+</div>
+<div class="flex space-x-8">
+<a class="text-slate-500 hover:text-secondary transition-all font-body text-sm tracking-wide" href="#">Privacy Policy</a>
+<a class="text-slate-500 hover:text-secondary transition-all font-body text-sm tracking-wide" href="#">Institutional Access</a>
+<a class="text-slate-500 hover:text-secondary transition-all font-body text-sm tracking-wide" href="#">ORCID Profile</a>
+<a class="text-slate-500 hover:text-secondary transition-all font-body text-sm tracking-wide" href="#">LinkedIn</a>
+</div>
+</div>
+</footer>
+</body></html>
