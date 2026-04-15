@@ -752,6 +752,12 @@ button {
     overflow: hidden;
 }
 
+.research-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
 .research-card {
     display: flex;
     background: var(--surface-container-lowest);
