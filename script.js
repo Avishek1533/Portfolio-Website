@@ -209,3 +209,111 @@ window.copyEmail = function(element) {
         console.error('Failed to copy email: ', err);
     });
 };
+
+// ── ALL PROJECTS MODAL ────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+    const viewAllBtn = document.getElementById('view-all-btn');
+    const projectsModal = document.getElementById('all-projects-modal');
+    const closeProjectsModalBtn = document.getElementById('close-projects-modal');
+    const modalBody = document.getElementById('project-modal-body');
+    const projectsList = document.querySelector('.projects-list');
+
+    if (viewAllBtn && projectsModal && closeProjectsModalBtn && projectsList) {
+        let cloned = false;
+
+        viewAllBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            if(!cloned) {
+                const clone = projectsList.cloneNode(true);
+                // Remove the hidden class from any hidden projects
+                clone.querySelectorAll('.hide-from-home').forEach(el => {
+                    el.classList.remove('hide-from-home');
+                });
+                // Ensure all elements are visible in modal without waiting for scroll
+                clone.querySelectorAll('.animate-on-scroll').forEach(el => {
+                    el.classList.add('visible');
+                    // Remove observer dependency
+                    el.style.opacity = '1';
+                    el.style.transform = 'none';
+                });
+                
+                // Re-apply fallback listener for cloned images
+                clone.querySelectorAll('.project-image img').forEach(img => {
+                    img.addEventListener('error', () => {
+                        img.style.display = 'none';
+                        const parent = img.parentElement;
+                        parent.classList.add('no-image');
+                        const projectTitle = parent.parentElement.querySelector('.project-title');
+                        if (projectTitle) {
+                            parent.setAttribute('data-label', projectTitle.textContent);
+                            parent.style.setProperty('--fallback-text', `"${projectTitle.textContent}"`);
+                        }
+                    });
+                });
+                
+                modalBody.appendChild(clone);
+                cloned = true;
+            }
+            
+            projectsModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeProjectsModalBtn.addEventListener('click', () => {
+            projectsModal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        // Close modal when clicking on the overlay background
+        projectsModal.addEventListener('click', (e) => {
+            if (e.target === projectsModal) {
+                projectsModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+
+    // ── ALL RESEARCH MODAL ────────────────────────────────────────
+    const viewAllResearchBtn = document.getElementById('view-all-research-btn');
+    const researchModal = document.getElementById('all-research-modal');
+    const closeResearchModalBtn = document.getElementById('close-research-modal');
+    const researchModalBody = document.getElementById('research-modal-body');
+    const researchList = document.querySelector('.research-list');
+
+    if (viewAllResearchBtn && researchModal && closeResearchModalBtn && researchList) {
+        let researchCloned = false;
+
+        viewAllResearchBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            if(!researchCloned) {
+                const clone = researchList.cloneNode(true);
+                // Ensure all elements are visible in modal without waiting for scroll
+                clone.querySelectorAll('.animate-on-scroll').forEach(el => {
+                    el.classList.add('visible');
+                    el.style.opacity = '1';
+                    el.style.transform = 'none';
+                });
+                
+                researchModalBody.appendChild(clone);
+                researchCloned = true;
+            }
+            
+            researchModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeResearchModalBtn.addEventListener('click', () => {
+            researchModal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        researchModal.addEventListener('click', (e) => {
+            if (e.target === researchModal) {
+                researchModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+});
