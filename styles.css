@@ -1044,7 +1044,7 @@ button {
 
 /* No-image fallback with icon */
 .project-image.no-image::after {
-    content: 'sports_esports';
+    content: var(--fallback-icon, 'code');
     font-family: 'Material Symbols Outlined';
     font-size: 5rem;
     color: rgba(255, 255, 255, 0.2);
