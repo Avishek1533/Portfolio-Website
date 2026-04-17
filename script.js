@@ -167,18 +167,52 @@ document.addEventListener('DOMContentLoaded', () => {
             const submitBtn = document.getElementById('submit-btn');
             const originalText = submitBtn.innerHTML;
 
-            // Show success state
-            submitBtn.innerHTML = '<span class="material-symbols-outlined icon-sm">check_circle</span> Message Sent!';
-            submitBtn.style.background = 'var(--secondary)';
+            // Show loading state
+            submitBtn.innerHTML = '<span class="material-symbols-outlined icon-sm">hourglass_empty</span> Sending...';
+            submitBtn.style.pointerEvents = 'none';
 
-            // Reset form
-            contactForm.reset();
+            // Send form using EmailJS
+            if (typeof emailjs === 'undefined') {
+                console.error("EmailJS object is not defined. Ensure the EmailJS script is loading.");
+                submitBtn.innerHTML = '<span class="material-symbols-outlined icon-sm">error</span> Setup Error';
+                submitBtn.style.background = '#e74c3c';
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.style.background = '';
+                    submitBtn.style.pointerEvents = 'auto';
+                }, 3000);
+                return;
+            }
 
-            // Reset button after 3 seconds
-            setTimeout(() => {
-                submitBtn.innerHTML = originalText;
-                submitBtn.style.background = '';
-            }, 3000);
+            // Explicitly passing the public key as the 4th argument ensures it authenticates properly
+            emailjs.sendForm('service_6m0ikkz', 'template_yotimmm', e.target, '3E-S9P44lXvN4CXb-')
+                .then(() => {
+                    // Show success state
+                    submitBtn.innerHTML = '<span class="material-symbols-outlined icon-sm">check_circle</span> Message Sent!';
+                    submitBtn.style.background = 'var(--secondary)';
+
+                    // Reset form
+                    contactForm.reset();
+
+                    // Reset button after 3 seconds
+                    setTimeout(() => {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.style.background = '';
+                        submitBtn.style.pointerEvents = 'auto';
+                    }, 3000);
+                }, (error) => {
+                    console.error('EmailJS Error:', error);
+                    // Show error state
+                    submitBtn.innerHTML = '<span class="material-symbols-outlined icon-sm">error</span> Failed to Send';
+                    submitBtn.style.background = '#e74c3c'; // Red error color
+
+                    // Reset button after 3 seconds
+                    setTimeout(() => {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.style.background = '';
+                        submitBtn.style.pointerEvents = 'auto';
+                    }, 3000);
+                });
         });
     }
 
@@ -194,10 +228,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Global function for email copy
-window.copyEmail = function(element) {
+window.copyEmail = function (element) {
     const email = element.getAttribute('data-email');
     if (!email) return;
-    
+
     // Copy to clipboard
     navigator.clipboard.writeText(email).then(() => {
         const originalText = element.innerHTML;
@@ -223,8 +257,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         viewAllBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            
-            if(!cloned) {
+
+            if (!cloned) {
                 const clone = projectsList.cloneNode(true);
                 // Remove the hidden class from any hidden projects
                 clone.querySelectorAll('.hide-from-home').forEach(el => {
@@ -237,7 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     el.style.opacity = '1';
                     el.style.transform = 'none';
                 });
-                
+
                 // Re-apply fallback listener for cloned images
                 clone.querySelectorAll('.project-image img').forEach(img => {
                     img.addEventListener('error', () => {
@@ -251,11 +285,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                     });
                 });
-                
+
                 modalBody.appendChild(clone);
                 cloned = true;
             }
-            
+
             projectsModal.classList.add('active');
             document.body.style.overflow = 'hidden';
         });
@@ -264,7 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
             projectsModal.classList.remove('active');
             document.body.style.overflow = '';
         });
-        
+
         // Close modal when clicking on the overlay background
         projectsModal.addEventListener('click', (e) => {
             if (e.target === projectsModal) {
@@ -286,8 +320,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         viewAllResearchBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            
-            if(!researchCloned) {
+
+            if (!researchCloned) {
                 const clone = researchList.cloneNode(true);
                 // Ensure all elements are visible in modal without waiting for scroll
                 clone.querySelectorAll('.animate-on-scroll').forEach(el => {
@@ -295,11 +329,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     el.style.opacity = '1';
                     el.style.transform = 'none';
                 });
-                
+
                 researchModalBody.appendChild(clone);
                 researchCloned = true;
             }
-            
+
             researchModal.classList.add('active');
             document.body.style.overflow = 'hidden';
         });
@@ -308,7 +342,7 @@ document.addEventListener('DOMContentLoaded', () => {
             researchModal.classList.remove('active');
             document.body.style.overflow = '';
         });
-        
+
         researchModal.addEventListener('click', (e) => {
             if (e.target === researchModal) {
                 researchModal.classList.remove('active');
